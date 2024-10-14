@@ -1,6 +1,6 @@
 // index.js
 
-import { e } from "vitest/dist/reporters-rzC174PQ.js";
+// import { e } from "vitest/dist/reporters-rzC174PQ.js";
 
 // Callbacks
 const handleClick = (ramen) => {
@@ -23,7 +23,7 @@ const handleClick = (ramen) => {
 
 const addSubmitListener = () => {
   // Add code
-  form = document.getElementById('new-ramen');
+  const form = document.getElementById('new-ramen');
   form.addEventListener('submit', function(e) {
     e.preventDefault() //avoid refreshing
     //getting values from form we assign the elements first
