@@ -1,9 +1,23 @@
-// // index.js
+// index.js
 
-// // Callbacks
-// const handleClick = (ramen) => {
-//   // Add code
-// };
+// Callbacks
+const handleClick = (ramen) => {
+  // Add code
+    // Select the DOM elements where the details will be displayed
+    const foodDisplayImg = document.querySelector("#ramen-detail .detail-image");
+    const foodName = document.querySelector("#ramen-detail .name");
+    const foodRestaurant = document.querySelector("#ramen-detail .restaurant");
+    const ratingFood = document.getElementById("rating-display");
+    const commentOnFood = document.getElementById("comment-display");
+  
+    // Update the elements with the ramen's data
+    foodDisplayImg.src = ramen.image;
+    foodDisplayImg.alt = ramen.name;
+    foodName.textContent = ramen.name;
+    foodRestaurant.textContent = ramen.restaurant;
+    ratingFood.textContent = ramen.rating;
+    commentOnFood.textContent = ramen.comment;
+};
 
 // const addSubmitListener = () => {
 //   // Add code
@@ -15,11 +29,14 @@ const displayRamens = () => {
   fetch('http://localhost:3000/ramens') 
   .then(response => response.json())
   .then(ramens => {
-    const ramenMenuDiv = document.getElementById('ramen-menu');
+    const ramenMenu = document.getElementById('ramen-menu');
     ramens.forEach(ramen => {
       const img = document.createElement('img');
-      img.src = ramen.image
-      ramenMenuDiv.appendChild(img);
+      img.src = ramen.image;
+      img.alt = ramen.name;
+
+      img.addEventListener('click', () => handleClick(ramen));
+      ramenMenu.appendChild(img);
     });
   });
 };
