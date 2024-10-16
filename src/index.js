@@ -1,11 +1,9 @@
 // index.js
 
-// import { e } from "vitest/dist/reporters-rzC174PQ.js";
-
 // Callbacks
 const handleClick = (ramen) => {
   // Add code
-    // Select the DOM elements where the details will be displayed
+    // Select the DOM elements 
     const foodDisplayImg = document.querySelector("#ramen-detail .detail-image");
     const foodName = document.querySelector("#ramen-detail .name");
     const foodRestaurant = document.querySelector("#ramen-detail .restaurant");
